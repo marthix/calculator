@@ -47,7 +47,7 @@ form div select {
   -webkit-transition: border .5s;
 }
 
-button:hover {
+input[type="button"]:hover {
   background-color: #29712e;
   border: 1px solid #51a857;
   cursor: pointer;
@@ -62,8 +62,8 @@ form div select:hover {
 form div input:focus,
 form div textarea:focus,
 form div select:focus,
-button:active,
-button:focus {
+input[type="button"]:active,
+input[type="button"]:focus {
   outline-color: #51a857;
 }
 

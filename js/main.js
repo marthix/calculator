@@ -93,7 +93,7 @@ $(document).ready(function(){
       justClicked = true
     }
 
-    if (display.val() === '0'){
+    if (display.val() == '0'){
         display.val(button)
     } else {
       display.val(display.val() + button)
