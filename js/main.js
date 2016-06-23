@@ -42,9 +42,13 @@ $(document).ready(function(){
       hasRun = true
     }
     else if (currentOperator === '*') {
+      currentTotal = currentTotal * currentNumber
+      display.val(currentTotal)
       hasRun = true
     }
     else if (currentOperator === '/') {
+      currentTotal = currentTotal / currentNumber
+      display.val(currentTotal)
       hasRun = true
     }
   })
@@ -53,34 +57,28 @@ $(document).ready(function(){
   $('.btn-opr').on('click',function(){
     currentOperator = $(this).val()
     previousNumber = currentNumber
-    // currentNumber = Number(display.val())
     justClicked = false
 
     if (hasRun === false) {
       currentNumber = Number(display.val())
     }
 
-    if (currentOperator === '+') {
-      currentTotal = currentTotal + currentNumber
-    }
-    else if (currentOperator === '-') {
-      if (previousNumber === '0') {
-        currentTotal = currentNumber
-        previousNumber = currentNumber
-      } else {
+    if (previousNumber == '0') {
+      currentTotal = currentNumber
+      previousNumber = currentNumber
+    } else {
+      if (currentOperator === '+') {
+        currentTotal = currentTotal + currentNumber
+      }
+      else if (currentOperator === '-') {
         currentTotal = currentTotal - currentNumber
       }
-    }
-    else if (currentOperator === '*') {
-      if (previousNumber === '0') {
-        currentTotal = 1
-        currentTotal = currentTotal * currentNumber
-      } else {
+      else if (currentOperator === '*') {
         currentTotal = currentTotal * currentNumber
       }
-    }
-    else if (currentOperator === '/') {
-
+      else if (currentOperator === '/') {
+        currentTotal = currentTotal / currentNumber
+      }
     }
 
     display.val(currentTotal)
